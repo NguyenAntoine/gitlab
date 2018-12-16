@@ -10,6 +10,8 @@ services:
       - ./config:/etc/gitlab
       - ./logs:/var/log/gitlab
       - ./data:/var/opt/gitlab
+    env_file:
+      - .env
     restart: always
     networks:
       - default

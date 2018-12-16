@@ -14,7 +14,5 @@ docker-compose up -d
 ## Update docker images
 
 ```bash
-docker-compose down
-docker-compose pull
-docker-compose up -d
+./updateDockerImages.sh
 ```

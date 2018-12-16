@@ -5,17 +5,12 @@ services:
     expose:
       - 80
       - 22
-    hostname: gitlab.nguyenantoine.com
+    hostname: ${VIRTUAL_HOST}
     volumes:
       - ./config:/etc/gitlab
       - ./logs:/var/log/gitlab
       - ./data:/var/opt/gitlab
     restart: always
-    environment:
-      - VIRTUAL_HOST=gitlab.nguyenantoine.com
-      - LETSENCRYPT_HOST=gitlab.nguyenantoine.com
-      - LETSENCRYPT_EMAIL=antoine.ngu@outlook.fr
-      - GITLAB_OMNIBUS_CONFIG="external_url 'https://gitlab.nguyenantoine.com'"
     networks:
       - default
       - reverse-proxy
